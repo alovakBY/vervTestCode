@@ -1,0 +1,743 @@
+// Iphone XR
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  ::before,
+  ::after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+body {
+  font-family: "SFProText", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.container {
+  width: 414px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.header {
+  height: 470px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 48px;
+  background: linear-gradient(225deg, #894ac9 0%, #4d46b1 100%);
+}
+
+.btnClose {
+  width: 32px;
+  height: 32px;
+  margin-right: 13px;
+  border-radius: 50%;
+  position: relative;
+  background: url(../img/close.svg) center no-repeat;
+  background-color: rgba(255, 255, 255, 0.527344);
+  align-self: flex-end;
+}
+
+.header-title {
+  font-family: "SFProDisplay", sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 41px;
+  letter-spacing: 0.37px;
+  align-self: center;
+  margin-bottom: 33px;
+}
+
+.header-group {
+  position: relative;
+  .header-group--bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.15) 50%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  .header-group--blik {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    .blik {
+      width: 100px;
+      height: 200px;
+      background-color: white;
+      filter: blur(130px);
+      transform: translateX(-400px) skewX(45deg);
+    }
+  }
+
+  .header-text {
+    font-size: 12px;
+    line-height: 14px;
+    p {
+      padding: 17px 0 17px 33px;
+      border-bottom: 1px solid;
+      border-image: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0.3),
+          rgba(255, 255, 255, 0)
+        )
+        50% 0%;
+      &:first-child {
+        border-top: 1px solid;
+      }
+    }
+  }
+
+  .header-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: url(../img/iphoneXR/lines.svg) 0 0 no-repeat;
+    transition: 2s linear;
+  }
+
+  .header-dots {
+    .dot {
+      opacity: 0;
+      transition: 0.1s linear;
+      width: 14px;
+      height: 14px;
+      border: 3px solid #ffffff;
+      box-sizing: border-box;
+      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.139942);
+      border-radius: 50%;
+      &:first-child {
+        position: absolute;
+        top: 63px;
+        right: 32px;
+        background: #ee304e;
+      }
+      &:last-child {
+        position: absolute;
+        top: 161px;
+        right: 32px;
+        background: #04cd00;
+      }
+    }
+  }
+
+  .header-points {
+    .point {
+      opacity: 0;
+      transition: 0.3s linear;
+      position: absolute;
+      width: 51px;
+      height: 24px;
+      background-color: white;
+      border-radius: 10px;
+      color: black;
+      box-shadow: 0px 2px 4px rgba(90, 0, 124, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:first-child {
+        right: 14px;
+        top: 31px;
+      }
+      &:last-child {
+        right: 14px;
+        top: 129px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 4px solid white;
+      }
+      .point-text {
+        font-family: "SFProDisplay", sans-serif;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: center;
+      }
+      .point-arrow {
+        margin-top: 2px;
+      }
+    }
+  }
+
+  .header-girl {
+    position: absolute;
+    top: -42px;
+    left: 178px;
+    width: 152px;
+    height: 290px;
+    background: url(../img/iphoneXR/girlIphoneXR@2x.png) center no-repeat;
+    background-size: cover;
+  }
+}
+
+@keyframes animationDots {
+  from {
+    transform: scale(1.3);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes animationPoint {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(0.9);
+  }
+  35% {
+    transform: scale(1.1);
+  }
+  40% {
+    transform: scale(0.9);
+  }
+  45% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes animationBlik {
+  from {
+    transform: translateX(-400px) skewX(45deg);
+  }
+  to {
+    transform: translateX(1000px) skewX(45deg);
+  }
+}
+
+.lightThemeSlider {
+  background: #f3f2f9;
+  color: #1a1a1a;
+}
+
+.darkThemeSlider {
+  background: linear-gradient(225deg, #262526 0%, #19181a 100%);
+  color: #ffffff;
+}
+
+.slider {
+  position: absolute;
+  left: 0;
+  top: 393px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-container {
+  display: flex;
+  & > div {
+    flex-shrink: 0;
+  }
+  & > div + div {
+    margin-left: 5px;
+  }
+  will-change: transform;
+}
+
+.slide {
+  width: 374px;
+  height: 145px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.slide-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.slide-top--title {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.slide-top--autor {
+  font-size: 15px;
+  line-height: 18px;
+  opacity: 0.5;
+}
+
+.rating {
+  margin-bottom: 15px;
+  display: flex;
+  .star {
+    width: 21px;
+    height: 21px;
+    background: url(../img/star.svg) no-repeat center;
+    background-size: cover;
+  }
+  .star + .star {
+    margin-left: 4px;
+  }
+}
+
+.slide-comment {
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.lightThemeOptions {
+  background-color: white;
+}
+
+.darkThemeOptions {
+  background-color: black;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  padding: 97px 20px 39px;
+}
+
+.options-options {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 29px;
+}
+
+.lightThemeOption {
+  background: #f3f2f9;
+  color: #000000;
+}
+
+.darkThemeOption {
+  background: #373640;
+  color: #ffffff;
+}
+
+.activOption {
+  background: linear-gradient(225deg, #894ac9 0%, #4d46b1 100%);
+  color: white;
+}
+
+.option {
+  width: 118px;
+  border-radius: 5px;
+  text-align: center;
+  & + & {
+    margin-left: 10px;
+  }
+}
+
+.option_1 {
+  height: 151px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  padding-top: 6px;
+  display: flex;
+  flex-direction: column;
+  span {
+    font-size: 15px;
+    line-height: 17px;
+  }
+}
+
+.price {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 12px;
+}
+
+.priceBottom {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 6px;
+}
+
+.option_2 {
+  height: 176px;
+  overflow: hidden;
+  .save {
+    background: #fcbf59;
+    color: black;
+  }
+}
+
+.save {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 5px 0;
+}
+
+.option_3 {
+  position: relative;
+  height: 176px;
+  overflow: hidden;
+  .save,
+  .sale {
+    background: #fca759;
+    color: black;
+  }
+  .sale {
+    font-weight: 700;
+    font-size: 9px;
+    line-height: 15px;
+    letter-spacing: 0.4px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 1px;
+  }
+}
+
+.options-btn {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(225deg, #542285 0%, #222266 100%);
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  a {
+    font-size: 22px;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.lightThemeOptionsText {
+  color: #000000;
+  opacity: 0.4;
+}
+
+.darkThemeOptionsText {
+  color: #7d7d80;
+}
+
+.options-text {
+  font-size: 11px;
+  line-height: 15px;
+  text-align: center;
+}
+
+// Iphone X
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) {
+  .container {
+    width: 375px;
+  }
+
+  .header {
+    height: 419px;
+  }
+
+  .header-title {
+    margin-bottom: 20px;
+  }
+
+  .header-group {
+    .header-text {
+      p {
+        padding: 15px 0 15px 21px;
+      }
+    }
+
+    .header-lines {
+      background: url(../img/iphoneX/lines.svg) 0 0 no-repeat;
+    }
+
+    .header-dots {
+      .dot {
+        &:first-child {
+          top: 53px;
+          right: 48px;
+        }
+        &:last-child {
+          top: 141px;
+          right: 48px;
+        }
+      }
+    }
+
+    .header-points {
+      .point {
+        &:first-child {
+          right: 30px;
+          top: 24px;
+        }
+        &:last-child {
+          right: 30px;
+          top: 112px;
+        }
+      }
+    }
+
+    .header-girl {
+      width: 135px;
+      height: 253px;
+      top: -35px;
+      left: 162px;
+      background: url(../img/iphoneX/girlIphoneX@3x.png) center no-repeat;
+      background-size: cover;
+    }
+  }
+
+  .slider {
+    top: 346px;
+  }
+
+  .slide {
+    width: 335px;
+  }
+
+  .options {
+    padding: 93px 20px 39px;
+  }
+
+  .options-options {
+    margin-bottom: 20px;
+  }
+
+  .option {
+    width: 105px;
+  }
+
+  .option_1 {
+    height: 131px;
+  }
+
+  .title {
+    line-height: 24px;
+  }
+
+  .price {
+    padding-top: 8px;
+  }
+
+  .priceBottom {
+    padding-top: 6px;
+  }
+
+  .option_2 {
+    height: 156px;
+  }
+
+  .save {
+    padding: 5px 0;
+  }
+
+  .option_3 {
+    height: 156px;
+    .sale {
+      padding-bottom: 1px;
+    }
+  }
+}
+
+// Iphone 5,SE
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) {
+  .container {
+    width: 320px;
+  }
+
+  .header {
+    height: 261px;
+    padding-top: 29px;
+  }
+
+  .btnClose {
+    margin-right: 10px;
+  }
+
+  .header-title {
+    font-size: 24px;
+    line-height: 12px;
+    margin-bottom: 15px;
+    margin-left: 18px;
+  }
+
+  .header-group {
+    .header-text {
+      p {
+        padding: 5px 0 5px 20px;
+        line-height: 15px;
+      }
+    }
+
+    .header-lines {
+      background: url(../img/iphoneSE/lines.svg) 0 0 no-repeat;
+    }
+
+    .header-dots {
+      .dot {
+        &:first-child {
+          top: 32px;
+          right: 38px;
+        }
+        &:last-child {
+          top: 85px;
+          right: 38px;
+        }
+      }
+    }
+
+    .header-points {
+      .point {
+        &:first-child {
+          right: 20px;
+          top: -1px;
+        }
+        &:last-child {
+          right: 20px;
+          top: 52px;
+        }
+      }
+    }
+
+    .header-girl {
+      width: 93px;
+      height: 157px;
+      top: -28px;
+      left: 160px;
+      background: url(../img/iphoneSE/girlIphoneSE@2x.png) center no-repeat;
+      background-size: cover;
+    }
+  }
+
+  .slider {
+    top: 200px;
+  }
+
+  .slide {
+    width: 280px;
+    height: 110px;
+    padding: 15px;
+    .slide-top {
+      margin-bottom: 7px;
+    }
+    .rating {
+      margin-bottom: 11px;
+      .star {
+        width: 15px;
+        height: 15px;
+      }
+      .star + .star {
+        margin-left: 4px;
+      }
+    }
+    .slide-comment {
+      font-size: 13px;
+      line-height: 16px;
+    }
+  }
+
+  .options {
+    padding: 62px 20px 18px;
+  }
+
+  .options-options {
+    margin-bottom: 12px;
+  }
+
+  .option {
+    width: 88px;
+  }
+
+  .option_1 {
+    height: 112px;
+  }
+
+  .title {
+    font-size: 20px;
+    line-height: 24px;
+    padding-top: 3px;
+    span {
+      font-size: 13px;
+      line-height: 15px;
+    }
+  }
+
+  .price {
+    font-size: 11px;
+    line-height: 13px;
+    padding-top: 5px;
+  }
+
+  .priceBottom {
+    font-size: 10px;
+    letter-spacing: -0.27px;
+    line-height: 12px;
+    padding-top: 3px;
+  }
+
+  .option_2 {
+    height: 133px;
+  }
+
+  .save {
+    font-size: 11px;
+    letter-spacing: 0.66px;
+    padding: 3px 0;
+  }
+
+  .option_3 {
+    height: 133px;
+    .sale {
+      padding-bottom: 1px;
+      font-size: 7px;
+    }
+  }
+
+  .options-btn {
+    margin-bottom: 17px;
+  }
+}
